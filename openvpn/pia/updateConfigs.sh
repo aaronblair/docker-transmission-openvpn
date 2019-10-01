@@ -36,9 +36,9 @@ do
   then
     folderNameWithEscapedSlash="${configsFolders[$i-1]}\/"
   fi
-  sed -i "s/auth-user-pass/auth-user-pass \/config\/openvpn-credentials.txt/" *.ovpn
-  sed -i "s/ca ca\.rsa\.\([0-9]*\)\.crt/ca \/etc\/openvpn\/pia\/${folderNameWithEscapedSlash}ca\.rsa\.\1\.crt/" *.ovpn
-  sed -i "s/crl-verify crl\.rsa\.\([0-9]*\)\.pem/crl-verify \/etc\/openvpn\/pia\/${folderNameWithEscapedSlash}crl\.rsa\.\1\.pem/" *.ovpn
+  sed -i"" -e "s/auth-user-pass/auth-user-pass \/config\/openvpn-credentials.txt/" *.ovpn
+  sed -i"" -e "s/ca ca\.rsa\.\([0-9]*\)\.crt/ca \/etc\/openvpn\/pia\/${folderNameWithEscapedSlash}ca\.rsa\.\1\.crt/" *.ovpn
+  sed -i"" -e "s/crl-verify crl\.rsa\.\([0-9]*\)\.pem/crl-verify \/etc\/openvpn\/pia\/${folderNameWithEscapedSlash}crl\.rsa\.\1\.pem/" *.ovpn
   if [ ! -z "${configsFolders[$i-1]}" ]
   then
     cd ..
